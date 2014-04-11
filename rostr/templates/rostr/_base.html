@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>{% block title %}roster genius{% endblock %}</title>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<script src="{{ STATIC_URL }}zepto.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}rostr.css" />
+		<link rel="apple-touch-icon-precomposed" href="static/appicon.png"/>
+		<link rel="shortcut icon" href="static/appicon.png" type="image/png"/>
+
+		{% block scripts %} {% endblock %}
+
+	</head>
+
+	<body>
+
+		<div id="main" class="wrapper {% block bodyclass %} {% endblock %}">
+			{% block content %} {% endblock %}
+		</div>
+
+		{% block footer %}
+			<div class="footer">
+				<p class="pullleft">
+					<a class='footerlink' href="mailto:feedback@rostergeni.us">Contact feedback@rostergeni.us</a>
+				</p>
+				<p class="pullright">
+					<a class='footerlink' href="{% url 'rostr-help' %}">Help</a>
+				</p>
+			</div>
+		{% endblock %}
+	</body>
+</html>
